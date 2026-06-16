@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grundei AutoBearbeitung | Fahrzeugservice & Vermarktung</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #0d0d0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(13, 13, 15, 0.92);
+      backdrop-filter: blur(10px);
+      padding: 18px 7%;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 10; border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .logo { font-weight: 800; letter-spacing: .5px; font-size: 1.1rem; }
+    .logo span { color: #c9a24a; }
+    .nav-links { display: flex; gap: 24px; font-size: .95rem; color: #d7d7d7; }
+    header {
+      min-height: 90vh; display: flex; align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover; background-position: center;
+      padding: 30px 7%;
+    }
+    .hero { max-width: 780px; margin-top: 70px; }
+    .eyebrow {
+      color: #c9a24a; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; margin-bottom: 14px; font-size: .85rem;
+    }
+    h1 { font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.05; margin-bottom: 24px; }
+    .hero p { font-size: 1.2rem; color: #dddddd; max-width: 640px; margin-bottom: 34px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn {
+      padding: 14px 22px; border-radius: 999px; font-weight: 700;
+      display: inline-block; transition: .2s;
+    }
+    .btn-primary { background: #c9a24a; color: #111; }
+    .btn-secondary { border: 1px solid rgba(255,255,255,.35); color: #fff; }
+    .btn:hover { transform: translateY(-2px); opacity: .9; }
+    section { padding: 90px 7%; }
+    .section-title { max-width: 760px; margin-bottom: 44px; }
+    .section-title h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 12px; }
+    .section-title p { color: #bdbdbd; font-size: 1.05rem; }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;
+    }
+    .card {
+      background: #17171a; border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px; padding: 28px; min-height: 220px;
+    }
+    .card h3 { color: #ffffff; margin-bottom: 12px; font-size: 1.25rem; }
+    .card p { color: #bdbdbd; }
+    .card .number { color: #c9a24a; font-weight: 800; margin-bottom: 16px; font-size: 1.4rem; }
+    .about {
+      background: #121214; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 44px; align-items: center;
+    }
+    .about-box {
+      background: #1a1a1d; border-radius: 26px; padding: 34px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .about-box ul { margin-top: 18px; padding-left: 18px; color: #d6d6d6; }
+    .step {
+      display: flex; gap: 18px; padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .step strong { color: #c9a24a; min-width: 36px; }
+    .cta {
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.86)),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover; background-position: center;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .cta h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 16px; }
+    .cta p { max-width: 680px; margin: 0 auto 28px; color: #ddd; }
+    .contact {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+    }
+    .contact-card {
+      background: #17171a; border-radius: 24px; padding: 30px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .contact-card p { margin: 12px 0; color: #d8d8d8; }
+    footer {
+      padding: 28px 7%; text-align: center; color: #aaa;
+      border-top: 1px solid rgba(255,255,255,.08); font-size: .9rem;
+    }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      header { min-height: 82vh; }
+      .about, .contact { grid-template-columns: 1fr; }
+      section { padding: 70px 6%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Grundei <span>AutoBearbeitung</span></div>
+    <div class="nav-links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div class="eyebrow">Fahrzeugservice & Vermarktung</div>
+      <h1>Dein Fahrzeug professionell präsentieren und verkaufen.</h1>
+      <p>
+        Ich unterstütze Privatpersonen und kleine Betriebe bei Fahrzeugfotos,
+        Social Media, Online-Anzeigen, Fahrzeugbewertung und auf Wunsch auch bei
+        der Fahrzeugaufbereitung.
+      </p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#kontakt">Kostenlose Anfrage stellen</a>
+        <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="leistungen">
+    <div class="section-title">
+      <h2>Leistungen</h2>
+      <p>Alles, was dein Fahrzeug für einen professionellen Auftritt braucht.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="number">01</div><h3>Fahrzeugfotos</h3><p>Saubere, ansprechende Fotos für Inserate, Social Media und Verkaufsplattformen.</p></div>
+      <div class="card"><div class="number">02</div><h3>Online-Anzeigen</h3><p>Erstellung und Optimierung von Fahrzeuganzeigen mit Text, Ausstattung und Verkaufsargumenten.</p></div>
+      <div class="card"><div class="number">03</div><h3>Social Media</h3><p>Bearbeitung von Bildern, Beiträgen und einfachen Fahrzeug-Posts für Instagram, Facebook und Co.</p></div>
+      <div class="card"><div class="number">04</div><h3>Fahrzeugbewertung</h3><p>Marktgerechte Einschätzung deines Fahrzeugs anhand Zustand, Ausstattung, Laufleistung und Vergleichsangeboten.</p></div>
+      <div class="card"><div class="number">05</div><h3>Fahrzeugaufbereitung</h3><p>Auf Wunsch einfache Innen- und Außenaufbereitung, damit dein Fahrzeug gepflegt und verkaufsstark wirkt.</p></div>
+      <div class="card"><div class="number">06</div><h3>Verkaufsunterstützung</h3><p>Unterstützung beim gesamten Auftritt: von Fotos bis zur fertigen Anzeige.</p></div>
+    </div>
+  </section>
+
+  <section class="about" id="ueber-mich">
+    <div>
+      <div class="section-title">
+        <h2>Über Grundei AutoBearbeitung</h2>
+        <p>
+          Ich verbinde Fahrzeugwissen mit moderner Online-Vermarktung.
+          Mein Ziel: Fahrzeuge besser präsentieren, professioneller inserieren
+          und den Verkauf einfacher machen.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-box">
+      <h3>Warum mit mir?</h3>
+      <ul>
+        <li>Ausbildung im Automobilbereich</li>
+        <li>Verständnis für Fahrzeugverkauf und Kundenansprache</li>
+        <li>Moderner Auftritt für private und gewerbliche Fahrzeuge</li>
+        <li>Flexible Unterstützung je nach Bedarf</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ablauf">
+    <div class="section-title">
+      <h2>So läuft es ab</h2>
+      <p>Einfach, schnell und unkompliziert.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><strong>1</strong><div><h3>Anfrage senden</h3><p>Du meldest dich mit Fahrzeugdaten und deinem Wunsch.</p></div></div>
+      <div class="step"><strong>2</strong><div><h3>Leistung auswählen</h3><p>Fotos, Anzeige, Social Media, Bewertung oder Aufbereitung.</p></div></div>
+      <div class="step"><strong>3</strong><div><h3>Umsetzung</h3><p>Ich bereite alles professionell vor und erstelle den passenden Auftritt.</p></div></div>
+      <div class="step"><strong>4</strong><div><h3>Online gehen</h3><p>Dein Fahrzeug wird besser präsentiert und kann überzeugender angeboten werden.</p></div></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Bereit für einen besseren Fahrzeugauftritt?</h2>
+    <p>Schick mir einfach ein paar Daten zu deinem Fahrzeug und ich sage dir, wie ich dich unterstützen kann.</p>
+    <a class="btn btn-primary" href="#kontakt">Jetzt Kontakt aufnehmen</a>
+  </section>
+
+  <section id="kontakt">
+    <div class="section-title">
+      <h2>Kontakt</h2>
+      <p>Trage hier deine echten Kontaktdaten ein, bevor du die Seite veröffentlichst.</p>
+    </div>
+    <div class="contact">
+      <div class="contact-card">
+        <h3>Grundei AutoBearbeitung</h3>
+        <p><strong>Telefon:</strong> 0159 06189855</p>
+        <p><strong>E-Mail:</strong> justin.grundei@outlook.de</p>
+        <p><strong>Instagram:</strong> @justin.grundei</p>
+        <p><strong>Region:</strong> Ostallgäu / Kaufbeuren und Umgebung</p>
+      </div>
+      <div class="contact-card">
+        <h3>Hinweis</h3>
+        <p>Für eine Anfrage am besten direkt Fahrzeugmodell, Baujahr, Kilometerstand, Standort und gewünschte Leistung senden.</p>
+        <p>Beispiel: „Ich brauche Fotos und eine Anzeige für meinen BMW 320d, Baujahr 2018, 95.000 km.“</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Grundei AutoBearbeitung · Fahrzeugservice & Vermarktung</p>
+  </footer>
+
+</body>
+</html>
