@@ -4,6 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grundei Automotive | Fahrzeugvermarktung • Fahrzeugfotos • Social Media • Aufbereitung</title>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -388,5 +410,10 @@ WhatsApp Anfrage
     <p>© 2026 Grundei Automotive · Fahrzeugservice & Vermarktung</p>
   </footer>
 
+<a class="whatsapp-float"
+   href="https://wa.me/4915906189855?text=Hallo%20Justin,%20ich%20habe%20Interesse%20an%20deinen%20Leistungen."
+   target="_blank">
+   💬
+</a>
 </body>
 </html>
