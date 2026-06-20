@@ -152,6 +152,80 @@
       <div class="card"><div class="number">06</div><h3>Verkaufsunterstützung</h3><p>Unterstützung beim gesamten Auftritt: von Fotos bis zur fertigen Anzeige.</p></div>
     </div>
   </section>
+
+<section id="service-auswahl">
+  <div class="section-title">
+    <h2>Welche Unterstützung benötigst du?</h2>
+    <p>Wähle deine gewünschten Leistungen aus und starte direkt eine vorbereitete WhatsApp-Anfrage.</p>
+  </div>
+
+  <div class="grid">
+    <label class="card">
+      <input type="checkbox" value="Fahrzeugfotografie">
+      <h3>📸 Fahrzeugfotografie</h3>
+      <p>Professionelle Fahrzeugbilder für Inserate, Social Media und Verkaufsplattformen.</p>
+    </label>
+
+    <label class="card">
+      <input type="checkbox" value="Inserat-Erstellung">
+      <h3>📝 Inserat-Erstellung</h3>
+      <p>Komplette Fahrzeuganzeigen mit Beschreibung und Verkaufsargumenten.</p>
+    </label>
+
+    <label class="card">
+      <input type="checkbox" value="Social Media Inhalte">
+      <h3>📱 Social Media</h3>
+      <p>Erstellung von Fahrzeugbeiträgen für Instagram, Facebook und andere Plattformen.</p>
+    </label>
+
+    <label class="card">
+      <input type="checkbox" value="Marktpreiseinschätzung">
+      <h3>📊 Marktpreiseinschätzung</h3>
+      <p>Orientierung zum realistischen Fahrzeugwert und Verkaufspreis.</p>
+    </label>
+
+    <label class="card">
+      <input type="checkbox" value="Fahrzeugaufbereitung">
+      <h3>✨ Fahrzeugaufbereitung</h3>
+      <p>Innen- und Außenreinigung für einen besseren Fahrzeugauftritt.</p>
+    </label>
+  </div>
+
+  <br>
+
+  <a class="btn btn-primary" href="#" onclick="sendWhatsAppRequest()">
+    Anfrage per WhatsApp senden
+  </a>
+</section>
+
+<script>
+function sendWhatsAppRequest() {
+  const selected = [];
+  document.querySelectorAll('#service-auswahl input[type="checkbox"]:checked').forEach(function(box) {
+    selected.push(box.value);
+  });
+
+  if (selected.length === 0) {
+    alert("Bitte wähle mindestens eine Leistung aus.");
+    return;
+  }
+
+  const message =
+    "Hallo Justin,%0A%0A" +
+    "ich interessiere mich für folgende Leistungen bei Grundei Automotive:%0A%0A" +
+    selected.map(item => "• " + item).join("%0A") +
+    "%0A%0A" +
+    "Fahrzeug:%0A" +
+    "Marke/Modell:%0A" +
+    "Baujahr:%0A" +
+    "Kilometerstand:%0A" +
+    "Standort:%0A%0A" +
+    "Bitte melde dich bei mir.";
+
+  window.open("https://wa.me/4915906189855?text=" + message, "_blank");
+}
+</script>
+  
 <section id="referenzen">
   <div class="section-title">
     <h2>Referenzen & Projekte</h2>
